@@ -1,0 +1,788 @@
+/* CSS Document */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Comic Sans MS", cursive;
+  background: #999;
+}
+
+/* HEADER Y MENÚ */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  background: #34495E;
+  z-index: 10;
+}
+#btnmenu {
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+.navegacion {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  z-index: 9;
+}
+.menu {
+  width: 320px;
+  height: 100%;
+  background: #fff;
+  list-style: none;
+  position: absolute;
+  top: 0;
+  left: -320px;
+  transition: left 0.5s;
+}
+.menu li.titulomenu {
+  padding: 20px;
+  background: #5f6f81;
+  color: #FFF;
+  text-align: center;
+  font-size: 22px;
+}
+.menu a {
+  display: block;
+  padding: 20px;
+  border-bottom: 1px solid #c6d0da;
+  font-size: 22px;
+  text-decoration: none;
+  color: #575d69;
+}
+.menu a:hover {
+  background: #798da3;
+  color: #FFF;
+}
+.icon-menu {
+  margin-right: 12px;
+}
+.itemsubmenu > a::after {
+  content: "\f105";
+  float: right;
+  font-family: FontAwesome;
+}
+.submenu {
+  position: absolute;
+  top: 0;
+  left: -320px;
+  width: 320px;
+  height: 100%;
+  background: #fff;
+  transition: left 0.5s;
+}
+.submenu .titulomenu {
+  background: #fff;
+  color: #075d69;
+}
+.regresa {
+  padding: 10px 20px;
+  background: #5f6f81;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+.regresa::before {
+  content: "\f0d9";
+  margin-right: 10px;
+  font-family: FontAwesome;
+}
+
+/* CARRUSEL */
+.slydeshow {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+.slider, .slider li {
+  width: 100%;
+}
+.slider li img {
+  width: 100%;
+}
+.caption {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  color: #FFF;
+}
+.caption h2 {
+  font-size: 50px;
+}
+.caption p {
+  font-size: 20px;
+}
+.paginacion {
+  position: absolute;
+  top: 102%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.paginacion li {
+  font-size: 20px;
+  margin: 2px 5px;
+  cursor: pointer;
+  color: #00CCFF;
+}
+.izquierda, .derecha {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 35px;
+  color: #0099FF;
+  z-index: 2;
+  cursor: pointer;
+}
+.izquierda {
+  left: 10px;
+}
+.derecha {
+  right: 10px;
+}
+/*inico de estilos de diseños*/
+.contenedoracercade
+{
+	display:flex;/*es dar la instruccion para centrar un texto o linea de codigo, alineando en frente, uno del otro*/
+	justify-content:space-evenly;
+}
+
+.imagenconf
+{
+	width:48%;/*es para hacer la imagen seleccionada mas chica*/
+}
+
+.contenidotexto   .contenedoracercade
+{
+	width:48%;/*es para hacer la imagen seleccionada mas chica*/
+}
+
+.contenidotexto h3 /*es para trabajar con el titulo del texto, y dar espacio en salto de linea abajo del titulo*/
+{
+	margin-bottom:15px;/*es para darle margen al texto, en la parte inferior*/
+}
+
+span /*es exclusivamente para numeros o letras, antes de un texto*/
+{
+	background:#000;/*es para darle un color de fondo a los numeros, de la imagen seleccionada antes del texto*/
+	color:#FFF;/*para darle y cambiar el color a los numeros, de la imagen seleccionada antes del texto*/
+	width:30px;
+	height:30px;
+	border-radius:50%;/*para hacer la imagen en circulo*/
+	padding:2px;
+	box-shadow:0 0 6px 0 rgba(0,0,0,0.5);/*rgba indica la transparencia en pantallas de computadora, es para sombrear un fondo en circulo, antes de un numero o letra*/
+	margin-right:5%;
+}
+
+.contenidotexto p/*es para trabajar con el parrafo y para dar espacio en el salto de linea*/
+{
+	padding:0px 0px 30px;/*es para dar espacio entre cada linea*/
+	font-weight:300;/*es para dar como tipo negritas a las letras, o el ancho de cada letra*/
+	text-align:justify;/*es para ajustar el texto, de los laterales*/
+}
+
+
+
+
+/*GALERIA DE IMAGEN*/
+
+.portafolio
+{
+	background:#CCC;/*para colocar color de fondo a la pantalla, detras de las imagenes solo de portafolio*/
+}
+
+.galeria-port
+{
+	display:flex;/*es dar la instruccion para centrar un texto o linea de codigo, alineando en frente, uno del otro*/
+	justify-content:space-evently;
+	flex-wrap: wrap;
+}
+
+.imagen-port
+{
+	width:24%;/*ancho*/
+	margin-bottom:10px;/*aqui las imagenes se enciman por defecto, y con el codigo de abajo se corrigen y alinean*/
+	height:200px;
+	overflow:hidden;
+	position:relative;
+	cursor:pointer; /*este es para que aparezca la manita, cuando esta encima de la imagen*/
+	box-shadow:0 0 6px 0 rgba(0,0,0,0.5);
+}
+
+.imagen-port> img/*las propiedades se aplican directo a la etiqueta img*/
+{
+	width:100%;
+	height:100%;
+	object-fit:cover;/*este comando se utiliza para indicar que una imagen o  video,  o un iframe debe de ser redimensionado para ajustarse a su contenedor o caja/*el IFRAME es para colocar fijo el encabezado o los menus o enlaces laterales*/
+	display:block;/*block es para agrupar las imagenes*/
+}
+
+.encimagaleria
+{
+	position:absolute;/*aqui es para los iconos de circulito*/
+	width:100%;
+	height:100%;
+	top:0;
+	background:hsla(273, 93%, 27%,0.7);/*para transparencia y sombra alrededor de la imagen, ulilizar el formato HSLA*/
+	transition:transform 0.5s;/*este es para darle ANIMACION a los iconos, la S es el tiempo, o sea segundos*/
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+}
+
+.encimagaleria img
+{
+	width::50%;
+}
+
+.encimagaleria p
+{
+	color:#fff;	
+}
+
+.imagen-port:hover .encimagaleria /*para dar movimiento al poner el puntero sobre la imagen y el icono morado, y desaparezca la imagen*/
+{
+	transform:scale(0);
+}
+
+
+
+/*clientes*/
+
+.tarjetas-cliente
+{
+	display:flex;
+	justify-content:space-evently;
+}
+
+.tarjetas-cliente  .tarjetac /*las imagenes aqui se colocan una encima de la otra, todas las imagenes*/
+{
+	background:#c6f;/*es color morado*/
+	display:flex;
+	width:46%;
+	height:200px;
+	align-items:center;
+	justify-content:space-evently;/*con esto se acomodan todas las imagenes*/
+	border-radius:5%;
+	box-shadow:0 0 6px 0 rgba(0,0,0,0.6);
+	margin:10px;
+}
+
+.tarjetas-cliente  .tarjetac img
+{
+	width:100px;
+	height:100px;
+	object-fit:cover;
+	border:3px solid #fff;
+	border-radius:50%;
+	display:block;
+}
+
+.tarjetas-cliente  .tarjetac >  .contenido-texto-tarjeta
+{
+	width:60%;
+	color:#fff;
+}
+
+.tarjetas-cliente  .tarjetac >  .contenido-texto-tarjeta
+{
+	font-weight:300;
+	padding-top:5px;
+	margin:4px;
+}
+
+	
+/*BLOQUE DE SERVICIOS*/	
+
+.servicios
+{
+	background:#FFF;
+	padding-bottom:30px;
+	margin-top:80px;
+}
+
+.servicio-cont
+{
+	display:flex;/*encima todas las imagenes de la pagina*/
+	justify-content:space-between; /*es para hacer espacio entre las imagenes*/
+	align-items:center; /*es para centrar todas  las etiquetas e  imagenes*/	
+}
+
+.servicio-individual
+{
+	width:26%;/*este es para el tamaño de la imagen*/
+	text-align:center;
+}
+
+.servicio-individual img
+{
+	width:90%;/*aqui es para el ancho o tamaño de las imagenes*/
+}
+
+.servicio-individual h3
+{
+	margin:10px 0;	
+}
+
+.servicio-individual p
+{
+	font-weight:300;/*este es para el grosor de la letra*/
+	text-align:justify;
+}
+
+
+
+/*PIE DE PAGINA*/
+
+footer/*se copia de HTML*/
+{
+	background:#414141;
+	padding:60px 0 30px 0;
+	margin:auto;/*esto es un margen automatico*/
+	overflow:hidden;/*este ajusta la imagen al tamaño de la pantalla, si vas haciendo mas chica la pantalla */
+}
+
+.contenedorpie
+{
+	display:flex;
+	width:90%;
+	justify-content:space-evenly;
+	margin:auto;
+	padding-bottom:50px;
+	border-bottom:1px solid #ccc;
+}
+
+.contenido-pie
+{
+	text-align:center;
+}
+
+.contenido-pie h4
+{
+	color:#fff;
+	border-bottom:3px solid #606;
+	padding-bottom:5px;
+	margin-bottom:10px;
+}
+
+.contenido-pie p
+{
+	color:#ccc;
+}
+
+.titulofinal
+{
+	text-align:center;
+	font-size:24px;
+	margin:20px 0 0 0;
+	color:#9e9797;
+}
+
+/*fin de estilos de diseño */
+
+
+/*fin de alojamiento*/
+.titulo
+{
+	color:#09F;
+	font-size:30px;
+	text-align:center;
+	margin-bottom:60px;
+	margin-top:100px;
+}
+.contenedoracercade
+{
+	display:flex;/*es dar la instruccion para centrar un texto o linea de codigo, alineando en frente, uno del otro*/
+	justify-content:space-evenly;
+}
+.imagenconf
+{
+	width:48%;/*es para hacer la imagen seleccionada mas chica*/
+}
+
+.contenidotexto   .contenedoracercade
+{
+	width:48%;/*es para hacer la imagen seleccionada mas chica*/
+}
+
+.contenidotexto h3 /*es para trabajar con el titulo del texto, y dar espacio en salto de linea abajo del titulo*/
+{
+	margin-bottom:15px;/*es para darle margen al texto, en la parte inferior*/
+}
+
+.explica /*es exclusivamente para numeros o letras, antes de un texto*/
+{
+	background:#000;/*es para darle un color de fondo a los numeros, de la imagen seleccionada antes del texto*/
+	color:#FFF;/*para darle y cambiar el color a los numeros, de la imagen seleccionada antes del texto*/
+	width:30px;
+	height:30px;
+	border-radius:50%;/*para hacer la imagen en circulo*/
+	padding:2px;
+	box-shadow:0 0 6px 0 rgba(0,0,0,0.5);/*rgba indica la transparencia en pantallas de computadora, es para sombrear un fondo en circulo, antes de un numero o letra*/
+	margin-right:5%;
+}
+
+.contenidotexto p/*es para trabajar con el parrafo y para dar espacio en el salto de linea*/
+{
+	padding:0px 0px 30px;/*es para dar espacio entre cada linea*/
+	font-weight:300;/*es para dar como tipo negritas a las letras, o el ancho de cada letra*/
+	text-align:justify;/*es para ajustar el texto, de los laterales*/
+}
+.contenedoracercade
+{
+	display:flex;/*es dar la instruccion para centrar un texto o linea de codigo, alineando en frente, uno del otro*/
+	justify-content:space-evenly;
+}
+.domin
+{
+	width:auto;
+	height:auto;
+}
+
+/*fin de alojamiento*/
+
+/*lapp*/
+.lap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 30px auto;
+  max-width: 1000px;
+  flex-wrap: wrap;
+  margin-top:10px;
+  margin-left:0px;
+}
+
+.lap img {
+  width: 500px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin-top:80px;
+  margin-left:0px;
+}
+
+.lap div {
+  flex: 1;
+  min-width: 300px;
+  margin-top:80px;
+}
+.lap-info {
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+/*fin de lapp*
+/*contacto*/
+/* ——— Variables de color (modo claro) ——— */
+:root {
+  --bg: #f7f8fa;
+  --card-bg: #ffffff;
+  --primary: #0066ff;
+  --primary-hover: #004ad9;
+  --text: #1f2937;
+  --error: #e63946;
+  --success: #188441;
+  --radius: 1rem;
+  --duration: 0.25s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  /*color: var(--text);*/
+}
+
+.form-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  padding: 2rem 2.5rem;
+  animation: slide-in var(--duration) ease-out;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-title {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.form-field {
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color var(--duration), box-shadow var(--duration);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.15);
+}
+
+.error-msg {
+  color: var(--error);
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  display: none;
+}
+
+.success-msg {
+  color: var(--success);
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--duration), transform var(--duration);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--primary-hover);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+form {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+label i {
+  margin-right: 6px;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+}
+
+input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.success-msg {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+.error-msg {
+  display: none;
+  color: red;
+  font-size: 0.85em;
+}
+/*fin de contacto*/
+/*blog*/
+.blog-seccion {
+  padding: 40px 20px;
+  background: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.blog-seccion .blog-titulo {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+.blog-seccion .contenedor-blog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.blog-seccion .entrada-blog {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.blog-seccion .entrada-blog:hover {
+  transform: translateY(-6px);
+}
+
+.blog-seccion .entrada-blog img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blog-seccion .contenido {
+  padding: 20px;
+}
+
+.blog-seccion .categoria {
+  display: inline-block;
+  background: #007BFF;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.blog-seccion .titulo-articulo {
+  font-size: 1.4rem;
+  margin: 10px 0;
+  color: #2c3e50;
+}
+
+.blog-seccion .meta {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.blog-seccion .resumen {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.blog-seccion .blog-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.blog-seccion .blog-btn:hover {
+  background: #218838;
+}
+/*fin de blog*/
+/*game*/
+.enlaces-videojuegos {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 40px auto;
+}
+.enlaces-videojuegos h2 {
+  color: #00ffff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.enlaces-videojuegos ul {
+  list-style: none;
+  padding: 0;
+}
+.enlaces-videojuegos li {
+  margin: 10px 0;
+}
+.enlaces-videojuegos a {
+  color: #00ccff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.enlaces-videojuegos a:hover {
+  color: #ffffff;
+}
+/*fin de game*/
